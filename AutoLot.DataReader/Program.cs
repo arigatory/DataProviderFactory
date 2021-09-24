@@ -4,7 +4,14 @@ Console.WriteLine("***** Fun with Data Readers *****\n");
 // Create and open a connection.
 using (SqlConnection connection = new SqlConnection())
 {
-    connection.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Integrated Security=true;Initial Catalog=AutoLot";
+    var connectionStringBuilder = new SqlConnectionStringBuilder
+    {
+        InitialCatalog = "AutoLot",
+        DataSource = "(localdb)\\mssqllocaldb",
+        IntegratedSecurity = true,
+
+    };
+    connection.ConnectionString = connectionStringBuilder.ConnectionString;
     connection.Open();
     // Create a SQL command object.
     string sql =
