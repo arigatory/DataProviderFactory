@@ -8,4 +8,10 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="AutoLotWindows.bak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
